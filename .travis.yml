@@ -8,12 +8,12 @@ cache:
 
 script:
   - npm run build
-  - ls dist/
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  local_dir: ./build
   keep_history: true
   on:
     branch: master
