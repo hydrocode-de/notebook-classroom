@@ -11,12 +11,9 @@ script:
   - ls
 
 deploy:
-  edge:
-    branch: v1.8.47
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: ./build
-  keep_history: true
   on:
     branch: master
