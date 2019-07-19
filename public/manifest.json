@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Notebook",
+  "name": "React Notebook classroom page",
   "icons": [
     {
       "src": "favicon.ico",

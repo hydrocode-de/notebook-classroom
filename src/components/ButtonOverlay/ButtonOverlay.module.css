@@ -1,0 +1,51 @@
+.ButtonOverlay {
+    position: fixed;
+}
+
+
+.ButtonGroup.OneButton {
+    width: calc(80px + 63px);
+    left: -80px;
+    transition: 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ButtonGroup.TwoButtons {
+    width: calc(2 * 80px + 63px);
+    left: -160px;
+    transition: 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ButtonGroup.ThreeButtons {
+    width: calc(3 * 80px + 63px);
+    left: -160px;
+    transition: 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.Button {
+    width: 80px;
+    margin: auto;
+    color: rgb(29, 29, 29);
+    transition: 0.2s ease-in-out;
+}
+
+.Button:hover {
+    color: rgb(165, 165, 165);
+    transition: 0.2s ease-in-out;
+}
+
+.ButtonGroup:hover {
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0px 15px 15px 0px;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.Chevron {
+    background-color: transparent;
+    transition: 0.5s ease-in;
+}
+
+.Chevron:hover {
+    background-color: lightgrey;
+    transition: 0.5s ease-in;
+}

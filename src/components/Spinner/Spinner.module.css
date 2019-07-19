@@ -1,0 +1,11 @@
+.Spinner {
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+}
+
+.Spinner p {
+    font-size: 80%;
+}
