@@ -11,7 +11,7 @@ script:
   
   # TODO: this should be run only on tags: true
   - cd  build
-  - zip - r notebook-classroom.zip ./*
+  - zip -r notebook-classroom.zip ./*
   - cd ..
   - mv build/notebook-classroom.zip ./notebook-classroom.zip
   
