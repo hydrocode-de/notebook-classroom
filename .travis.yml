@@ -19,7 +19,7 @@ deploy:
       branch: master
   - provider: releases
     skip_cleanup: true
-    github_token: $GITHUB_TOKEN
+    api_key: $GITHUB_TOKEN
     file_glob: true
     file: build/*
     on:
