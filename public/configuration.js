@@ -1,5 +1,6 @@
 var Config = {
   title: "Sample Lecture",
+  url: "https://mmaelicke.github.io/notebook-classroom",
   navigation: [
     {
       label: "Home",
