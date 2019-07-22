@@ -8,6 +8,13 @@ cache:
 
 script:
   - npm run build
+  
+  # TODO: this should be run only on tags: true
+  - cd build
+  - zip notebook-classroom.zip
+  - cd ..
+  - mv build/notebook-classroom.zip ./notebook-classroom.zip
+  
   - ls
 
 deploy:
@@ -20,7 +27,8 @@ deploy:
   - provider: releases
     skip_cleanup: true
     api_key: $GITHUB_TOKEN
-    file_glob: true
-    file: build/*
+    #file_glob: true
+    #file: build/*
+    file: notebook-classroom.zip
     on:
       tags: true
