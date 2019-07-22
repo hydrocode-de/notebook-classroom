@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-const DEVELOPMENT = true;
+const CONFIG = window.Config;
+if (!CONFIG) {
+    throw new Error('[axios.js] configuration.js not found.');
+}
+
+const DEVELOPMENT = !!CONFIG.development ? true : false;
 
 /**
  * LOCAL 
@@ -10,7 +15,7 @@ const DEVELOPMENT = true;
  * responses to the console. 
  */
 const notebookHttp = axios.create({
-    baseURL: DEVELOPMENT ? 'http://localhost:3000' : 'http://localhost:80'
+    baseURL: !!CONFIG.url ? CONFIG.url : 'http://localhost:3000'
 });
 
 if (DEVELOPMENT) {
