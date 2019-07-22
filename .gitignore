@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ignore chnges to configuration.js for development
+# comment when used in a prod environment
+public/configuration.js

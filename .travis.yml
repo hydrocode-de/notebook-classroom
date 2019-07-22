@@ -11,9 +11,16 @@ script:
   - ls
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: ./build
-  on:
-    branch: master
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: ./build
+    on:
+      branch: master
+  - provider: releases
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    file_glob: true
+    file: build/*
+    on:
+      tags: true
