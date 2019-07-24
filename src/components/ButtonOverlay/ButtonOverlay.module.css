@@ -49,3 +49,13 @@
     background-color: lightgrey;
     transition: 0.5s ease-in;
 }
+
+.Binder img {
+    filter: brightness(1);
+    transition: 0.5s ease-in;
+}
+
+.Binder:hover img {
+    filter: brightness(1.4);
+    transition: 0.5s ease-in;
+}

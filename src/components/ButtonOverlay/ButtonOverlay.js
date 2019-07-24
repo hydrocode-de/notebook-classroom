@@ -3,8 +3,9 @@ import classes from './ButtonOverlay.module.css';
 
 import {Button, ButtonGroup} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faExternalLinkAlt, faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import {faGithub} from '@fortawesome/free-brands-svg-icons';
+import binderLogo from './binder_logo.png';
 
 const ButtonOverlay = props => {
     let buttonCount = 0;
@@ -35,8 +36,8 @@ const ButtonOverlay = props => {
                 </Button> : null
                 }
                 {props.binder ? 
-                <Button className={classes.Button} variant="default" href={props.binder}>
-                    <FontAwesomeIcon className={classes.Button} icon={faExternalLinkAlt} size="3x"/>
+                <Button className={[classes.Button, classes.Binder].join(' ')} variant="default" href={props.binder}>
+                    <img src={binderLogo} alt="binder" width="57px" />
                 </Button> : null
                 }
                 <Button variant="default" className={classes.Chevron} disabled>
