@@ -74,3 +74,6 @@ Include the snippet below into any Markdown cell:
 ```
 
 This will undo the zoom. Be aware that this cell should not be skipped.
+
+
+In case you are experiencing trouble with that 

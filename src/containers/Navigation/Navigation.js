@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import classes from './Navigation.module.css';
 
 /**
  * Parse the given config to create a JSX navigation.
@@ -45,13 +46,20 @@ const Navigation = props => {
 
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="/">{props.brand ? props.brand : 'Notebook Classroom'}</Navbar.Brand>
+            <Navbar.Brand href="/">
+                <span className={classes.title}>{props.brand ? props.brand : 'Notebook Classroom'}</span>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="menu"></Navbar.Toggle>
             <Navbar.Collapse id="menu">
                 <Nav className="mx-auto" onSelect={eventKey => props.navigator(eventKey)}>
                     {elements}
                 </Nav>
             </Navbar.Collapse>
+            <Nav.Item>
+                <Nav.Link className="navbar-text" href="https://hydrocode.de" target="_blank">
+                    <img src="logo.png" width="25" height="25" /> a hydrocode application
+                </Nav.Link>
+            </Nav.Item>
         </Navbar>
     );
 }
