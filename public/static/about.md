@@ -34,7 +34,7 @@ the full control how your page will be presented to the students.
 the `configuration.js` defines the navigation. An example layout is
 already prepared. You can either add new items to the navigation, 
 or sort your files into the suggested one. As an example, in case 
-you compiled a `introduction.ipnb` to a `introduction.html` HTML 
+you compiled a `introduction.ipynb` to a `introduction.html` HTML 
 version and a `introduction.slides.html` presentation file, you can 
 add these two entries to `configuration.js`:
 
@@ -58,3 +58,19 @@ navigation: [
 ]
 ...
 ```
+
+## Interactive plots
+
+If you intent to use an interactive plotting library like bokeh or plotly, you might 
+run into the issue that the mouse pointer is a bit off, which makes hovering almost 
+impossible. What I found out so far is that there is a CSS setting in reveal.js setting 
+the ``slides`` class to a zoom of larger than 1 (``1.3...``). 
+Include the snippet below into any Markdown cell:
+
+```markdown
+<script>
+    document.querySelector('head').innerHTML += '<style>.slides { zoom: 1.0 !important; }</style>';
+</script>
+```
+
+This will undo the zoom. Be aware that this cell should not be skipped.
