@@ -32,12 +32,11 @@ jobs:
     - name: Install requirements
       run: | 
         python -m pip install --upgrade pip
-        pip install -r ./lectures/requirements.txt
+        pip install -r ./requirements.txt
         
     # Compile notebooks
     - name: Compile Notebooks
       run: | 
-        cd ./lectures
         mkdir ./nb
         jupyter nbconvert --to html --output-dir='./nb' *.ipynb
         jupyter nbconvert --to slides --output-dir='./nb' *ipynb
@@ -45,14 +44,12 @@ jobs:
     # install latest notebook classroom app
     - name: Install Notebook-classroom
       run: | 
-        cd ./lectures
         wget https://github.com/hydrocode-de/notebook-classroom/releases/latest/download/notebook-classroom.zip
         unzip ./notebook-classroom.zip -d ./dist
     
     # move all neccessary files
     - name: Copy content
       run: | 
-        cd ./lectures
         mv ./nb/* ./dist/nb
         mv ./index.md ./dist/static/index.md
         mv configuration.js ./dist/configuration.js
