@@ -1,0 +1,51 @@
+# Workflow will build the notebook-classroom app and add it as zip to artifacts
+name: Publish as ZIP
+
+on: [push, release]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # checkout repo
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    # Setup node.js
+    - name: Setup Node.js 
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    
+    # install dependencies
+    - name: Install dependencies
+      run: npm i
+    
+    # build application
+    - name: Build
+      run: | 
+        npm run build
+        cd ./build
+        zip -r notebook-classroom.zip ./*
+        cd ..
+        mv ./build/notebook-classroom.zip ./notebook-classroom.zip
+    
+    # Deploy to Github Pages
+    - name: Deploy to Pages
+      uses: crazy-max/ghaction-github-pages@v1.3.0
+      with:
+        target_branch: gh-pages
+        build_dir: ./build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    # Upload artifact
+    - name: Upload artifact
+      if: github.event_name == 'release'
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: notebook-classroom.zip
+        path: notebook-classroom.zip
+
