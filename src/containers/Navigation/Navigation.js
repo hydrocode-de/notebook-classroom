@@ -57,7 +57,7 @@ const Navigation = props => {
             </Navbar.Collapse>
             <Nav.Item>
                 <Nav.Link className="navbar-text" href="https://hydrocode.de" target="_blank">
-                    <img src="logo.png" width="25" height="25" /> a hydrocode application
+                    <img src="logo.png" width="25" height="25" alt="logo" /> a hydrocode application
                 </Nav.Link>
             </Nav.Item>
         </Navbar>
