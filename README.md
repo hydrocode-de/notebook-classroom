@@ -8,6 +8,11 @@ stored in Jupyter notebooks, that are compiled to reveal.js slides for
 presentation, HTML for reference and can be loaded in binder to 
 be used by your students.
 
+[mmaelicke](https://github.com/mmaelicke) has a sample lecture template that can be 
+used to generate new lectures:
+
+<a href="https://github.com/mmaelicke/sample-lecture/generate" target="_blank">generate my own lecture</a>
+
 ## Note
 
 This is a work in progress application and not finished yet.
