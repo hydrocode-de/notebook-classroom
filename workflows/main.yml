@@ -51,8 +51,10 @@ jobs:
     - name: Copy content
       run: | 
         mv ./nb/* ./dist/nb
-        mv ./index.md ./dist/static/index.md
         mv configuration.js ./dist/configuration.js
+        [ -d ./static ] && mv ./static/* ./dist/static/* 
+        [ -f ./index.md ] && mv index.md ./dist/static/index.md
+        [ -d ./img ] && mv ./img ./dist/img
         
     - name: Deploy
       uses: crazy-max/ghaction-github-pages@v1
