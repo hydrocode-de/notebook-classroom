@@ -8,10 +8,10 @@ stored in Jupyter notebooks, that are compiled to reveal.js slides for
 presentation, HTML for reference and can be loaded in binder to 
 be used by your students.
 
-[mmaelicke](https://github.com/mmaelicke) has a sample lecture template that can be 
+We are working on sample lecture templates that can be 
 used to generate new lectures:
 
-<a href="https://github.com/mmaelicke/sample-lecture/generate" target="_blank">generate my own lecture</a>
+<a href="https://github.com/hydrocode-de/sample-lecture-python/generate" target="_blank">generate my own lecture</a>
 
 ## Note
 
@@ -28,8 +28,8 @@ The first step is to create the full lecture content using
 as well, don't forget to set the slide metadata. 
 
 We will provide a [Github actions yml](https://github.com/features/actions) that 
-will do most of the work for you automatically. Copy the [workflows/main.yml] into the ``.github/workflows`` 
-folder of your repository. Alternatively, there is a [sample reposity](https://github.com/mmaelicke/sample-lecture) 
+will do most of the work for you automatically. Copy the ``workflows/main.yml`` into the ``.github/workflows`` 
+folder of your repository. Alternatively, there is a [sample repository](https://github.com/mmaelicke/sample-lecture) 
 that can be used as a template repository. The steps script performs are:
 
 1. Convert all ``*.ipynb`` files into ``.html`` and ``.slides.html`` files into a new ``./nb`` folder.
