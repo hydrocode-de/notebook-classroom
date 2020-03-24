@@ -11,7 +11,9 @@ be used by your students.
 We are working on sample lecture templates that can be 
 used to generate new lectures:
 
-<a href="https://github.com/hydrocode-de/sample-lecture-python/generate" target="_blank">generate my own lecture</a>
+<a href="https://github.com/hydrocode-de/sample-lecture-python/generate" target="_blank"><img src="https://www.python.org/static/img/python-logo.png" alt="logo" height="40"> generate my own Python lecture</a>
+
+*More Sample lectures will follow.*
 
 ## Note
 
@@ -30,7 +32,7 @@ as well, don't forget to set the slide metadata.
 We will provide a [Github actions yml](https://github.com/features/actions) that 
 will do most of the work for you automatically. Copy the ``workflows/main.yml`` into the ``.github/workflows`` 
 folder of your repository. Alternatively, there is a [sample repository](https://github.com/mmaelicke/sample-lecture) 
-that can be used as a template repository. The steps script performs are:
+that can be used as a template repository. The steps the script performs are:
 
 1. Convert all ``*.ipynb`` files into ``.html`` and ``.slides.html`` files into a new ``./nb`` folder.
 
@@ -47,11 +49,10 @@ that can be used as a template repository. The steps script performs are:
    configure notebook-classroom and you need to specify it. More info on configuration down below
 
 6. The configured React app will be deployed to [GitHub Pages](https://pages.github.com/). You'll 
-   find it at https://*your-username*.github.io/*repository-name*
+   find it at https://*your-username*.github.io/*repository-name*. On first deploy, you need to activate Pages in the Settings of your lecture repository.
 
 
 ## Configuration
-
 
 the `configuration.js` defines the navigation. An example layout is
 already prepared. You can either add new items to the navigation, 
