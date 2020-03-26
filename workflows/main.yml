@@ -3,7 +3,7 @@
 name: Notebook-Classrom
 
 # Only run on push to the master branch
-on:
+on: 
   push:
     branches: [ master ]
   schedule:
@@ -15,23 +15,22 @@ on:
 jobs:
   # Publish the application on github pages
   publish:
-    # use ubuntu
+    # use ubuntu 18.04
     runs-on: ubuntu-18.04
 
     steps:
     # Checks-out  $GITHUB_WORKSPACE
     - name: Checkout
       uses: actions/checkout@v2
-      
-    - name: Setup Python 3.6
-      uses: actions/setup-python@v1
+
+    - name: Install Conda
+      uses: s-weigand/setup-conda@v1.0.2
       with:
         python-version: 3.6
-
-    # install requirements
-    - name: Install requirements
+    
+    - name: Install dependencies
       run: | 
-        python -m pip install --upgrade pip
+        conda env update -f environment.yml -n base
         pip install -r ./requirements.txt
         
     # Compile notebooks
@@ -40,14 +39,14 @@ jobs:
         mkdir ./nb
         jupyter nbconvert --to html --output-dir='./nb' *.ipynb
         jupyter nbconvert --to slides --output-dir='./nb' *ipynb
-    
+        
     # install latest notebook classroom app
     - name: Install Notebook-classroom
       run: | 
         wget https://github.com/hydrocode-de/notebook-classroom/releases/latest/download/notebook-classroom.zip
         unzip ./notebook-classroom.zip -d ./dist
-    
-    # move all neccessary files
+   
+   # move all neccessary files
     - name: Copy content
       run: | 
         mv ./nb/* ./dist/nb
@@ -55,7 +54,8 @@ jobs:
         [ -d ./static ] && mv ./static/* ./dist/static/* 
         [ -f ./index.md ] && mv index.md ./dist/static/index.md
         [ -d ./img ] && mv ./img ./dist/img
-        
+    
+    # Deploy to Github Pages
     - name: Deploy
       uses: crazy-max/ghaction-github-pages@v1
       with:
