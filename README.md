@@ -13,7 +13,7 @@ used to generate new lectures:
 
 <a href="https://github.com/hydrocode-de/sample-lecture-python/generate" target="_blank"><img src="https://www.python.org/static/img/python-logo.png" alt="logo" height="40"> generate my own Python lecture</a>
 
-<a href="" target="_blank"><img src="https://www.r-project.org/logo/Rlogo.svg" alt="logo" height="40"> generate my own R lecture</a>
+<a href="https://github.com/hydrocode-de/sample-lecture-r/generate" target="_blank"><img src="https://www.r-project.org/logo/Rlogo.svg" alt="logo" height="40"> generate my own R lecture</a>
 
 *More Sample lectures will follow.*
 
