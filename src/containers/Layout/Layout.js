@@ -78,8 +78,7 @@ class Layout extends Component {
                     errMessage ? 
                     <Navigation dummy /> : 
                     <Navigation 
-                        brand={this.state.validConfig.title}
-                        config={this.state.validConfig.navigation} 
+                        config={this.state.validConfig} 
                         navigator={this.navigateHandler} 
                     />
                 }

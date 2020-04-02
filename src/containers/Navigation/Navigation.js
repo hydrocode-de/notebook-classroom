@@ -38,16 +38,16 @@ function navigationParser (navArray, level=0) {
 const Navigation = props => {
     // build the navigation elements from config
     let elements = null;
-    if (props.dummy || !props.config) {
+    if (props.dummy || !props.config.navigation) {
         elements =  <Navbar.Text>Corrupted configuration.js found.</Navbar.Text>
     }  else {
-        elements = navigationParser(props.config);
+        elements = navigationParser(props.config.navigation);
     }  
 
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="/">
-                <span className={classes.title}>{props.brand ? props.brand : 'Notebook Classroom'}</span>
+            <Navbar.Brand href={props.config.homeUrl ? props.config.homeUrl : '/'}>
+                <span className={classes.title}>{props.config.title ? props.config.title : 'Notebook Classroom'}</span>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="menu"></Navbar.Toggle>
             <Navbar.Collapse id="menu">
