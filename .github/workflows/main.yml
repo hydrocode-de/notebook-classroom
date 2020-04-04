@@ -45,8 +45,11 @@ jobs:
     # Upload artifact
     - name: Upload artifact
       if: github.event_name == 'release'
-      uses: actions/upload-artifact@v1.0.0
+      uses: svenstaro/upload-release-action@v1-release
       with:
-        name: notebook-classroom.zip
-        path: notebook-classroom.zip
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./notebook-classroom.zip
+        asset_name: notebook-classroom.zip
+        tag: ${{ github.ref }}
+        overwrite: true
 
