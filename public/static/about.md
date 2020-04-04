@@ -18,6 +18,8 @@ service.
 
 # Example
 
-There is a [sample lecture](https://github.com/mmaelicke/sample-lecture) repository, which is 
-also [deployed to GitHub Pages](https://mmaelicke.github.io/sample-lecture). This is a 
-template repository that can be forked and used.
+We developed a set of sample lectures, that can be used as templates to create new lectures:
+
+<a href="https://github.com/hydrocode-de/sample-lecture-python/generate" target="_blank"><img src="https://www.python.org/static/img/python-logo.png" alt="logo" height="40"> generate my own Python lecture</a>
+
+<a href="https://github.com/hydrocode-de/sample-lecture-r/generate" target="_blank"><img src="https://www.r-project.org/logo/Rlogo.svg" alt="logo" height="40"> generate my own R lecture</a>
