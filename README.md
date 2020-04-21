@@ -24,8 +24,13 @@ It is still under construction and might change in the future.
 
 ## Use
 
-Using this app is kind of complicated in the current state.
-We make some effort to improve the usability.
+We made some effort to improve the usability. There are two ways of using this application. Either you stick to one of the sample lectures and with only little changes you are ready to go. Or you set up the application manually, which will include compiling notebook, put all the content to the correct place, compile and deploy the application by hand. But you will have more influence on the result.
+
+### Using a sample lecture
+
+Follow one of the links above. After creating the repository, the application will be deployed to github-pages (which can be activated in the settings if something goes wrong). It will contain a lecture that will help you getting started. All you have to do is includingg your material and link it in the `configuration.js` file. 
+
+### Manual setup
 
 The first step is to create the full lecture content using 
 [Jupyter Notebooks](https://jupyter.org). If you want to use presentations 
@@ -33,8 +38,7 @@ as well, don't forget to set the slide metadata.
 
 We will provide a [Github actions yml](https://github.com/features/actions) that 
 will do most of the work for you automatically. Copy the ``workflows/main.yml`` into the ``.github/workflows`` 
-folder of your repository. Alternatively, there is a [sample repository](https://github.com/mmaelicke/sample-lecture) 
-that can be used as a template repository. The steps the script performs are:
+folder of your repository. Alternatively, you can do that by hand. The steps the script performs are:
 
 1. Convert all ``*.ipynb`` files into ``.html`` and ``.slides.html`` files into a new ``./nb`` folder.
 
