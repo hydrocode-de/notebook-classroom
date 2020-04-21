@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import classes from './Notebook.module.css';
 import {notebookHttp} from '../../axios';
 //import Markdown from 'react-markdown';
-import {Markdown} from 'react-markdown/with-html'
+import Markdown from 'react-markdown/with-html'
 
 import Alert from 'react-bootstrap/Alert';
 import Spinner from '../Spinner/Spinner';
