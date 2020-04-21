@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import classes from './Notebook.module.css';
 import {notebookHttp} from '../../axios';
-import Markdown from 'react-markdown';
+//import Markdown from 'react-markdown';
+import {Markdown} from 'react-markdown/with-html'
 
 import Alert from 'react-bootstrap/Alert';
 import Spinner from '../Spinner/Spinner';
@@ -114,7 +115,7 @@ class Notebook extends Component {
         let useContainer = true;
 
         if (fileEnding === 'md') {
-            page = (<Markdown source={this.state.notebook} />);
+            page = (<Markdown source={this.state.notebook} escapeHtml={false} />);
         } else {
             // here, more file specific stuff could be done
             //page = (<div className={classes.NbContainer} dangerouslySetInnerHTML={{__html: this.state.notebook}}></div>);
