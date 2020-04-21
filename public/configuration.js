@@ -1,6 +1,6 @@
 var Config = {
   title: "Sample Lecture",
-  url: "https://mmaelicke.github.io/notebook-classroom",
+  url: "https://hydrocode-de.github.io/notebook-classroom",
   homeUrl: "https://hydrocode.de",
   navigation: [
     {
