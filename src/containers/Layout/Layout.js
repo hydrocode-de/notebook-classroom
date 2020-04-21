@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 import classes from './Layout.module.css';
 import Navigation from '../Navigation/Navigation';
@@ -22,6 +22,10 @@ function checkConfigValidity(config) {
     }
     return conf;
 };
+
+const themeLoader = (name) => {
+    return import(`./themes/${name}.min.css`);
+}
 
 class Layout extends Component {
     constructor(props) {
@@ -71,9 +75,13 @@ class Layout extends Component {
             </Alert>
         }
 
+        const theme = this.state.validConfig.theme ? this.state.validConfig.theme : 'default';
+        themeLoader(theme);
         // render
         return (
-            <div className={classes.Layout}>
+            <div 
+                className={classes.Layout} 
+            >
                 {
                     errMessage ? 
                     <Navigation dummy /> : 

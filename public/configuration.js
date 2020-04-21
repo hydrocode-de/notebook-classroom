@@ -2,6 +2,8 @@ var Config = {
   title: "Sample Lecture",
   url: "https://hydrocode-de.github.io/notebook-classroom",
   homeUrl: "https://hydrocode.de",
+  theme: "solar",
+  accent: "primary",
   navigation: [
     {
       label: "Home",
